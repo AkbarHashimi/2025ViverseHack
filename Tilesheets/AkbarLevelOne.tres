@@ -1032,6 +1032,7 @@ texture = ExtResource("1_vhq62")
 27:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kdyp"]
+resource_name = "LevelOneVersion"
 texture = ExtResource("2_3p3nq")
 40:0/0 = 0
 41:0/0 = 0

@@ -26,3 +26,5 @@ Hi I am a student at California State University East Bay studying Computer Engi
 I started coding around 2021 when I first began taking Computer Science classes in community college.  
 What started as a love of video games began my journey to search more into how computers work, how to program them etc.  
 Here I want to learn how to develop (and finish) my first game!  
+
+### Riley Guidry

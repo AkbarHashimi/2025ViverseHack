@@ -1,11 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://dutxqtu4d3k7g"]
+[gd_scene load_steps=35 format=3 uid="uid://dutxqtu4d3k7g"]
 
 [ext_resource type="Texture2D" uid="uid://v1rjwwh6c6qe" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Idle.png" id="1_g2els"]
-[ext_resource type="Script" uid="uid://b6yb57ihafpt" path="res://scenes/player.gd" id="1_qhqgy"]
+[ext_resource type="Script" uid="uid://dymt6yvbfex7b" path="res://scenes/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dc76fcbjedv6r" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Right_Attack.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b077nj7of1vwt" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Run.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bna3rxxiuq26i" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Right_Defence.png" id="4_tuyoq"]
-[ext_resource type="Script" uid="uid://ba3y06hu680d6" path="res://scenes/animated_sprite_2d.gd" id="5_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
 size = Vector2(57, 80)
@@ -223,7 +222,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(91, 110)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -235,5 +234,5 @@ texture_filter = 1
 position = Vector2(-6, 1)
 scale = Vector2(0.978125, 1)
 sprite_frames = SubResource("SpriteFrames_a38lo")
-animation = &"defend"
-script = ExtResource("5_qlg0r")
+animation = &"run"
+frame_progress = 0.7423347

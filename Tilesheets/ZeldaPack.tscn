@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc4d8vm0rvkro"]
-
-[ext_resource type="TileSet" uid="uid://bt2ylcvj4gauw" path="res://Tilesheets/ZeldaPack.tres" id="1_ixb08"]
-
-[node name="ZeldaPack" type="TileMapLayer"]
-tile_set = ExtResource("1_ixb08")

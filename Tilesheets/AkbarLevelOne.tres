@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c3phrw8xlh423"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c3phrw8xlh423"]
 
 [ext_resource type="Texture2D" uid="uid://bme70g72pvggs" path="res://AssetPacks/RF_Catacombs_v1.0/LevelOneVersion.png" id="2_3p3nq"]
 [ext_resource type="Texture2D" uid="uid://dmocts6ttkxha" path="res://AssetPacks/RF_Catacombs_v1.0/decorative.png" id="2_4kdyp"]
@@ -55,6 +55,7 @@ texture = ExtResource("2_4kdyp")
 5:5/0 = 0
 6:5/0 = 0
 8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 9:5/0 = 0
 10:5/0 = 0
 11:5/0 = 0
@@ -74,8 +75,11 @@ texture = ExtResource("2_4kdyp")
 12:6/0 = 0
 13:6/0 = 0
 0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.9838314, 8, -3.078556, -8, 8, -8, 8, 8)
 1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 1.9484901, -8, 2.0631065, 8)
 5:7/0 = 0
 6:7/0 = 0
 9:7/0 = 0
@@ -86,6 +90,7 @@ texture = ExtResource("2_4kdyp")
 6:8/0 = 0
 9:8/0 = 0
 10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)
 11:8/0 = 0
 12:8/0 = 0
 13:8/0 = 0
@@ -128,6 +133,12 @@ texture = ExtResource("2_4kdyp")
 0:15/0 = 0
 1:15/0 = 0
 2:15/0 = 0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3p3nq"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, 8)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kdyp"]
 resource_name = "LevelOneVersion"
@@ -752,6 +763,7 @@ texture = ExtResource("2_3p3nq")
 43:17/0 = 0
 46:17/0 = 0
 47:17/0 = 0
+47:17/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_3p3nq")
 49:17/0 = 0
 50:17/0 = 0
 52:17/0 = 0
@@ -1203,5 +1215,6 @@ texture = ExtResource("2_3p3nq")
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
+navigation_layer_0/layers = 1
 sources/2 = SubResource("TileSetAtlasSource_4kdyp")
 sources/1 = SubResource("TileSetAtlasSource_avqso")

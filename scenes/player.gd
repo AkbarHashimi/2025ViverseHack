@@ -2,60 +2,48 @@ extends CharacterBody2D
 #@onready var player = $"."
 @onready var player_anim = $AnimatedSprite2D
 
-var count: int = 0
-var dx: int = 1
-var dy: int = 1
+var default_speed: int = 100
+var speed: int = 0
 
 func _physics_process(delta):
 	
 	# _physics_process() is called every "physics tick" before _process()
+	velocity = Vector2.ZERO
 	
-	velocity.x = 200 * dx
-	velocity.y = 200 * dy
-
-	var motion = velocity * delta
-	move_and_collide(motion)
+	if (Input.is_action_pressed("ui_right")):
+		velocity += Vector2.RIGHT
+	if (Input.is_action_pressed("ui_left")):
+		velocity += Vector2.LEFT
+	if (Input.is_action_pressed("ui_up")):
+		velocity += Vector2.UP
+	if (Input.is_action_pressed("ui_down")):
+		velocity += Vector2.DOWN
+		
+	velocity = velocity.normalized() * speed
+		
+	move_and_collide(velocity * delta)
 
 func _process(delta):
 	
-	# _process() is called after every physics tick
-	
-	# Animation sprites are stored in AnimatedSprite2D
-	# Go to the 2D tab on the top of the window
-	# Click AnimatedSprite2D under Player node
-	# Each series of sprite frames is a different animation
-	
-	if (Input.is_key_pressed(KEY_C)):
-		dx = 0
-		dy = 0
+	if (Input.is_key_pressed(KEY_X)):
+		speed = default_speed * 0.25
 		player_anim.play("attack")
-	
-	elif (Input.is_action_pressed("ui_up")):
-		dx = 0
-		dy = -1
-		player_anim.play("run")
-		
-	elif (Input.is_action_pressed("ui_down")):
-		dx = 0
-		dy = 1
-		player_anim.play("run")
-	
-	elif (Input.is_action_pressed("ui_right")):
-		# running left & right use the same animated frames, but are mirrored
-		player_anim.flip_h = false
-		player_anim.play("run")
-		dx = 1
-		dy = 0
-		
-	elif (Input.is_action_pressed("ui_left")):
-		player_anim.flip_h = true
-		player_anim.play("run")
-		dx = -1
-		dy = 0
-		
+	elif (Input.is_key_pressed(KEY_Z)):
+		speed = default_speed * 0.5
+		player_anim.play("defend")
 	else:
-		player_anim.play("idle")
-		dx = 0
-		dy = 0
+		speed = default_speed
+		if (Input.is_action_pressed("ui_right")):
+			player_anim.flip_h = false
+			player_anim.play("run")
+		elif (Input.is_action_pressed("ui_left")):
+			player_anim.flip_h = true
+			player_anim.play("run")
+		elif (Input.is_action_pressed("ui_up")
+				|| Input.is_action_pressed("ui_down")):
+			player_anim.play("run")
+		else:
+			speed = 0
+			player_anim.play("idle")
 	
 	return delta

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://sbgs52sy0wne"]
+
+[ext_resource type="PackedScene" uid="uid://dvhwx4rwtsmhk" path="res://Tilesheets/AkbarLevelOne.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://dutxqtu4d3k7g" path="res://scenes/player.tscn" id="2_w8frs"]
+
+[node name="Level" type="Node2D"]
+position = Vector2(1, 0)
+
+[node name="AkbarLevelOne" parent="." instance=ExtResource("1_w7c3h")]
+
+[node name="Player" parent="." instance=ExtResource("2_w8frs")]
+position = Vector2(464, 294)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://sbgs52sy0wne"]
+[gd_scene load_steps=3 format=3 uid="uid://3ustmm16i0q4"]
 
-[ext_resource type="PackedScene" uid="uid://dvhwx4rwtsmhk" path="res://Tilesheets/AkbarLevelOne.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://dvhwx4rwtsmhk" path="res://scenes/AkbarLevelOne.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://dutxqtu4d3k7g" path="res://scenes/player.tscn" id="2_w8frs"]
 
 [node name="Level" type="Node2D"]

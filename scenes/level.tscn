@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dgnxwxa37vr02" path="res://scenes/skeleton.tscn" id="3_w8frs"]
 
 [node name="Level" type="Node2D"]
-position = Vector2(1, 0)
 
 [node name="AkbarLevelOne" parent="." instance=ExtResource("1_w7c3h")]
 

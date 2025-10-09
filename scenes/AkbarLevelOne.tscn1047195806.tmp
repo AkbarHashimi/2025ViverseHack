@@ -19,5 +19,5 @@ navigation_polygon = ExtResource("2_1sw7a")
 enabled = false
 
 [node name="Skeleton" parent="." instance=ExtResource("3_u07hh")]
-position = Vector2(594, 437)
+position = Vector2(302, 216)
 motion_mode = 1

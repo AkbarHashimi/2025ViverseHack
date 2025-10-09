@@ -222,7 +222,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -236,3 +236,6 @@ scale = Vector2(0.978125, 1)
 sprite_frames = SubResource("SpriteFrames_a38lo")
 animation = &"run"
 frame_progress = 0.7423347
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)

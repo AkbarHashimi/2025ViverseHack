@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://dutxqtu4d3k7g"]
 
 [ext_resource type="Texture2D" uid="uid://v1rjwwh6c6qe" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Idle.png" id="1_g2els"]
-[ext_resource type="Script" uid="uid://dymt6yvbfex7b" path="res://scenes/player.gd" id="1_qhqgy"]
+[ext_resource type="Script" uid="uid://dymt6yvbfex7b" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dc76fcbjedv6r" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Right_Attack.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b077nj7of1vwt" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Run.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bna3rxxiuq26i" path="res://AssetPacks/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Blue Units/Lancer/Lancer_Right_Defence.png" id="4_tuyoq"]

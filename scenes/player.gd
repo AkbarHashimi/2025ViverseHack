@@ -2,6 +2,8 @@ extends CharacterBody2D
 #@onready var player = $"."
 @onready var player_anim = $AnimatedSprite2D
 
+signal enemy_hit
+
 var count: int = 0
 var dx: int = 1
 var dy: int = 1
@@ -59,3 +61,10 @@ func _process(delta):
 		dy = 0
 	
 	return delta
+
+func _hit_box(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

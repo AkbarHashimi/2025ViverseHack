@@ -8,6 +8,21 @@ extends CharacterBody2D
 
 #Code citing
 
+#Title: 
+#Author: 
+#published: 
+#permalink: 
+#publisher: 
+#commit hash: 
+
+#Title: How to make NavigationAgent2D stop navigating? (4.2.2)
+#Author: Cristian, smix8
+#published: May 2024
+#link: https://forum.godotengine.org/t/how-to-make-navigationagent2d-stop-navigating-4-2-2/58859
+#publisher: Godot website - Godot Forum
+ 
+
+
 #Title: navigation_introduction_2d.rst
 #Author: Rageking8 et al. 
 #published: Sept 16 2022
@@ -34,11 +49,13 @@ var player_reference = null
 var movement_speed: float = 5.0
 var movement_target_position: Vector2
 
+var in_range: bool = false
+
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
 	navigation_agent.path_desired_distance = 10.0
-	navigation_agent.target_desired_distance = 10.0
+	navigation_agent.target_desired_distance = 25.0
 	
 	#Dont await during _ready()
 	actor_setup.call_deferred()
@@ -70,14 +87,35 @@ func set_movement_target(movement_target: Vector2):
 func _physics_process(delta: float) -> void:
 	
 	
-	
 	if navigation_agent.is_navigation_finished():
 		return
 		
 	var current_agent_position: Vector2 = global_position
+	
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-		
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	
 	move_and_slide()
 	
+
+
+func _process(delta: float) -> void:
 	
+	if (player_reference && !in_range):
+		set_movement_target(player_reference.global_position)
+	else:
+		set_movement_target(global_position)
+
+
+func setup_barrier(signal_type: Signal, entered: bool):
+	if (entered): #was body entered signal?
+		signal_type.connect(_on_barrier_entered)
+	else:
+		signal_type.connect(_on_barrier_exited)
+
+func _on_barrier_entered(body: Node2D):
+	in_range = true
+	
+
+func _on_barrier_exited(body: Node2D):
+	in_range = false

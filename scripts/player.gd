@@ -47,3 +47,6 @@ func _process(delta):
 			player_anim.play("idle")
 	
 	return delta
+
+
+	

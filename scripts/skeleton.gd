@@ -25,10 +25,14 @@ extends CharacterBody2D
 # set target_position in a _process() call, and call get_next_path_position() 
 # in a _physics_process() call
 
+#Note: global position coordinates are used
+
 var count = 1
 
+var player_reference = null
+
 var movement_speed: float = 5.0
-var movement_target_position: Vector2 = Vector2(661,318.0)
+var movement_target_position: Vector2
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -39,22 +43,33 @@ func _ready():
 	#Dont await during _ready()
 	actor_setup.call_deferred()
 	
-	print(global_position)
+	
 	
 func actor_setup():
 	#Wait for 1st physics frame so Navigation Server can sync
 	await get_tree().physics_frame
 	
+	#attempt to get reference of player using absolute path
+	
+	player_reference = get_node_or_null("/root/Level/Player")
+	
+	if (player_reference):
+		movement_target_position = player_reference.global_position
+	
+	
 	# Now that the navigation map is no longer empty, set the movement target.
 	set_movement_target(movement_target_position)
+	
+
+	
+	# print(player_reference) debug check
 	
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target
 	
 func _physics_process(delta: float) -> void:
 	
-	if navigation_agent.is_target_reachable():
-		print("target is reachable")
+	
 	
 	if navigation_agent.is_navigation_finished():
 		return
